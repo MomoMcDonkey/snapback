@@ -1,0 +1,53 @@
+[gd_scene format=3 uid="uid://dskvgvodyccpj"]
+
+[ext_resource type="Texture2D" uid="uid://diix8hl2hk8sd" path="res://backound.png" id="2_lquwl"]
+[ext_resource type="Script" uid="uid://uedn6m6ul8j2" path="res://boomerang.gd" id="3_1bvp3"]
+[ext_resource type="Texture2D" uid="uid://bk20q6vs2861t" path="res://boomerang.png" id="3_7mycd"]
+[ext_resource type="Script" uid="uid://cwbshpi2wqjb7" path="res://area_2d_2.gd" id="3_272bh"]
+[ext_resource type="Texture2D" uid="uid://wr0uc0rn0idq" path="res://heart.png" id="4_272bh"]
+[ext_resource type="Texture2D" uid="uid://byx5xinv2wxve" path="res://coin.png" id="5_lquwl"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_7mycd"]
+radius = 5.0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_272bh"]
+size = Vector2(14, 8)
+
+[node name="Node2D" type="Node2D" unique_id=2025228843]
+position = Vector2(64, 63)
+
+[node name="Backround" type="Sprite2D" parent="." unique_id=1184700231]
+position = Vector2(0, 1)
+texture = ExtResource("2_lquwl")
+
+[node name="Heart" type="Sprite2D" parent="." unique_id=783106519]
+position = Vector2(-52, 54)
+texture = ExtResource("4_272bh")
+
+[node name="Heart" type="Sprite2D" parent="Heart" unique_id=844803312]
+position = Vector2(11, 0)
+texture = ExtResource("4_272bh")
+
+[node name="Heart" type="Sprite2D" parent="Heart/Heart" unique_id=416698813]
+position = Vector2(11, 0)
+texture = ExtResource("4_272bh")
+
+[node name="Area2D2" type="Area2D" parent="." unique_id=1229316642]
+script = ExtResource("3_272bh")
+
+[node name="Coin" type="Sprite2D" parent="Area2D2" unique_id=2121628123]
+texture = ExtResource("5_lquwl")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=909483713]
+shape = SubResource("CircleShape2D_7mycd")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=191664900]
+
+[node name="Boomerang" type="Sprite2D" parent="Area2D" unique_id=1268611718]
+position = Vector2(0, 30)
+texture = ExtResource("3_7mycd")
+script = ExtResource("3_1bvp3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=929144025]
+position = Vector2(0, 30)
+shape = SubResource("RectangleShape2D_272bh")
