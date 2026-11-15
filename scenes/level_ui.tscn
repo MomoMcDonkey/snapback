@@ -1,0 +1,164 @@
+[gd_scene load_steps=9 format=3]
+
+[ext_resource type="FontFile" path="res://Minecraft-Bold.otf" id="1_font"]
+[ext_resource type="FontFile" path="res://assets/fonts/pixel_level_font.tres" id="2_label_font"]
+
+[sub_resource type="StyleBoxFlat" id="Style_level_badge"]
+content_margin_left = 1.0
+content_margin_right = 1.0
+content_margin_top = 0.0
+content_margin_bottom = 0.0
+bg_color = Color(0.10, 0.14, 0.16, 0.95)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_panel"]
+bg_color = Color(0.10, 0.14, 0.16, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_button"]
+bg_color = Color(0.788, 0.298, 0.161, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_hover"]
+bg_color = Color(0.898, 0.435, 0.176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="Style_pressed"]
+bg_color = Color(0.612, 0.196, 0.141, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_level"]
+default_font = ExtResource("1_font")
+default_font_size = 6
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/styles/normal = SubResource("Style_button")
+Button/styles/hover = SubResource("Style_hover")
+Button/styles/pressed = SubResource("Style_pressed")
+Button/styles/focus = SubResource("Style_pressed")
+Label/colors/font_color = Color(1, 1, 1, 1)
+Label/colors/font_outline_color = Color(0, 0, 0, 1)
+Label/constants/outline_size = 1
+
+[node name="LevelUI" type="CanvasLayer"]
+layer = 2
+
+[node name="LevelNumber" type="Label" parent="."]
+offset_left = 4.0
+offset_top = 113.0
+offset_right = 42.0
+offset_bottom = 122.0
+mouse_filter = 2
+theme = SubResource("Theme_level")
+theme_override_fonts/font = ExtResource("2_label_font")
+theme_override_font_sizes/font_size = 5
+theme_override_constants/outline_size = 0
+theme_override_styles/normal = SubResource("Style_level_badge")
+text = "LEVEL #1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HomeButton" type="Button" parent="."]
+offset_left = 3.0
+offset_top = 3.0
+offset_right = 15.0
+offset_bottom = 15.0
+tooltip_text = "Home"
+mouse_default_cursor_shape = 2
+theme = SubResource("Theme_level")
+text = "<"
+
+[node name="ResultPanel" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_level")
+
+[node name="Shade" type="ColorRect" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.55)
+
+[node name="Panel" type="Panel" parent="ResultPanel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -45.0
+offset_top = -36.0
+offset_right = 45.0
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("Style_panel")
+
+[node name="Title" type="Label" parent="ResultPanel/Panel"]
+layout_mode = 0
+offset_left = 3.0
+offset_top = 7.0
+offset_right = 87.0
+offset_bottom = 19.0
+theme_override_font_sizes/font_size = 8
+text = "LEVEL CLEAR!"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Detail" type="Label" parent="ResultPanel/Panel"]
+visible = false
+layout_mode = 0
+offset_left = 3.0
+offset_top = 23.0
+offset_right = 87.0
+offset_bottom = 31.0
+text = "NICE THROWING!"
+horizontal_alignment = 1
+
+[node name="NextButton" type="Button" parent="ResultPanel/Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 37.0
+offset_right = 77.0
+offset_bottom = 51.0
+mouse_default_cursor_shape = 2
+text = "NEXT"
+
+[node name="HomeButton" type="Button" parent="ResultPanel/Panel"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 55.0
+offset_right = 77.0
+offset_bottom = 67.0
+mouse_default_cursor_shape = 2
+text = "HOME"

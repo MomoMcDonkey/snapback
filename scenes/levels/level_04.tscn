@@ -1,0 +1,29 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="1_coin"]
+[ext_resource type="PackedScene" path="res://scenes/magma.tscn" id="2_lava"]
+
+[node name="Level4" type="Node2D"]
+metadata/level_name = "Three Corners"
+metadata/solution_pull = Vector2(26, 18)
+
+[node name="Coin1" parent="." instance=ExtResource("1_coin")]
+position = Vector2(25, 68)
+
+[node name="Coin2" parent="." instance=ExtResource("1_coin")]
+position = Vector2(73, 12)
+
+[node name="Coin3" parent="." instance=ExtResource("1_coin")]
+position = Vector2(116, 38)
+
+[node name="Lava1" parent="." instance=ExtResource("2_lava")]
+position = Vector2(52, 52)
+
+[node name="Lava2" parent="." instance=ExtResource("2_lava")]
+position = Vector2(84, 36)
+
+[node name="Lava3" parent="." instance=ExtResource("2_lava")]
+position = Vector2(20, 100)
+
+[node name="Lava4" parent="." instance=ExtResource("2_lava")]
+position = Vector2(100, 84)

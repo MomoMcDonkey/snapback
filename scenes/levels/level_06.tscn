@@ -1,0 +1,32 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="1_coin"]
+[ext_resource type="PackedScene" path="res://scenes/magma.tscn" id="2_lava"]
+[ext_resource type="PackedScene" path="res://scenes/stone_block.tscn" id="3_stone"]
+
+[node name="Level6" type="Node2D"]
+metadata/level_name = "Stone Bank"
+metadata/solution_pull = Vector2(23.588932486423726, 21.62318811255508)
+metadata/solution_drag = Vector2(24, 22)
+
+[node name="Coin1" parent="." instance=ExtResource("1_coin")]
+position = Vector2(30, 64)
+
+[node name="Coin2" parent="." instance=ExtResource("1_coin")]
+position = Vector2(56, 16)
+
+[node name="Coin3" parent="." instance=ExtResource("1_coin")]
+position = Vector2(103, 44)
+
+[node name="Lava1" parent="." instance=ExtResource("2_lava")]
+position = Vector2(100, 88)
+
+[node name="Lava2" parent="." instance=ExtResource("2_lava")]
+position = Vector2(28, 88)
+
+[node name="Lava3" parent="." instance=ExtResource("2_lava")]
+position = Vector2(40, 40)
+
+[node name="Stone1" parent="." instance=ExtResource("3_stone")]
+position = Vector2(68, 52)
+block_size = Vector2(22, 12)

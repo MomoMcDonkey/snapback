@@ -1,0 +1,26 @@
+[gd_scene format=3 uid="uid://bke2imje3ok10"]
+
+[ext_resource type="PackedScene" uid="uid://02bt8xeyvh0e" path="res://scenes/boomerang.tscn" id="1_uwrxv"]
+[ext_resource type="Texture2D" uid="uid://djogvp52eo8bv" path="res://assets/sprites/backound.png" id="1_yqjtg"]
+[ext_resource type="PackedScene" uid="uid://3sryfg8muip" path="res://scenes/hud.tscn" id="4_lbhrr"]
+[ext_resource type="PackedScene" path="res://scenes/arena_walls.tscn" id="7_walls"]
+[ext_resource type="Script" uid="uid://neitruot0ujw" path="res://scripts/level_manager.gd" id="8_levels"]
+[ext_resource type="PackedScene" path="res://scenes/level_ui.tscn" id="9_ui"]
+
+[node name="Game" type="Node2D" unique_id=1449522636]
+script = ExtResource("8_levels")
+
+[node name="ArenaWalls" parent="." unique_id=131243787 instance=ExtResource("7_walls")]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1939402631]
+position = Vector2(64, 64)
+texture = ExtResource("1_yqjtg")
+
+[node name="CanvasLayer" parent="." unique_id=472901131 instance=ExtResource("4_lbhrr")]
+offset = Vector2(64, 122)
+transform = Transform2D(1, 0, 0, 1, 64, 122)
+
+[node name="Area2D" parent="." unique_id=1744513680 instance=ExtResource("1_uwrxv")]
+position = Vector2(64, 95)
+
+[node name="LevelUI" parent="." unique_id=170153350 instance=ExtResource("9_ui")]

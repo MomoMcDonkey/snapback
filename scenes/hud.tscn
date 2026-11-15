@@ -1,0 +1,58 @@
+[gd_scene format=3 uid="uid://3sryfg8muip"]
+
+[ext_resource type="Script" uid="uid://byn77r5todga3" path="res://scripts/coin_hud.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://cv5y07ycwhd0a" path="res://assets/sprites/coin.png" id="2_coin"]
+
+[sub_resource type="Shader" id="Shader_empty_coin"]
+code = "shader_type canvas_item;
+
+void fragment() {
+	float gray = dot(COLOR.rgb, vec3(0.299, 0.587, 0.114));
+	COLOR.rgb = vec3(gray * 0.7);
+	COLOR.a *= 0.8;
+}
+"
+
+[sub_resource type="ShaderMaterial" id="Material_empty_coin"]
+shader = SubResource("Shader_empty_coin")
+
+[node name="Hud" type="CanvasLayer" unique_id=472901131]
+
+[node name="CoinRow" type="HBoxContainer" parent="." unique_id=538698250]
+offset_left = -19.0
+offset_top = -12.0
+offset_right = 19.0
+offset_bottom = 4.0
+mouse_filter = 2
+theme_override_constants/separation = -5
+script = ExtResource("1_script")
+
+[node name="Coin1" type="TextureRect" parent="CoinRow" unique_id=1864826043]
+material = SubResource("Material_empty_coin")
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_coin")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+
+[node name="Coin2" type="TextureRect" parent="CoinRow" unique_id=219405803]
+material = SubResource("Material_empty_coin")
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_coin")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true
+
+[node name="Coin3" type="TextureRect" parent="CoinRow" unique_id=1213013741]
+material = SubResource("Material_empty_coin")
+custom_minimum_size = Vector2(16, 16)
+layout_mode = 2
+mouse_filter = 2
+texture = ExtResource("2_coin")
+expand_mode = 1
+stretch_mode = 5
+flip_v = true

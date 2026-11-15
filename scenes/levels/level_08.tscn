@@ -1,0 +1,39 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="1_coin"]
+[ext_resource type="PackedScene" path="res://scenes/magma.tscn" id="2_lava"]
+[ext_resource type="PackedScene" path="res://scenes/stone_block.tscn" id="3_stone"]
+
+[node name="Level8" type="Node2D"]
+metadata/level_name = "Crossfire"
+metadata/solution_pull = Vector2(13, 29)
+metadata/solution_drag = Vector2(13, 29)
+
+[node name="Coin1" parent="." instance=ExtResource("1_coin")]
+position = Vector2(57, 75)
+
+[node name="Coin2" parent="." instance=ExtResource("1_coin")]
+position = Vector2(62, 29)
+
+[node name="Coin3" parent="." instance=ExtResource("1_coin")]
+position = Vector2(44, 11)
+
+[node name="Lava1" parent="." instance=ExtResource("2_lava")]
+position = Vector2(88, 40)
+
+[node name="Lava2" parent="." instance=ExtResource("2_lava")]
+position = Vector2(28, 76)
+
+[node name="Lava3" parent="." instance=ExtResource("2_lava")]
+position = Vector2(100, 100)
+
+[node name="Lava4" parent="." instance=ExtResource("2_lava")]
+position = Vector2(16, 28)
+
+[node name="Stone1" parent="." instance=ExtResource("3_stone")]
+position = Vector2(38, 48)
+block_size = Vector2(14, 28)
+
+[node name="Stone2" parent="." instance=ExtResource("3_stone")]
+position = Vector2(88, 64)
+block_size = Vector2(22, 12)

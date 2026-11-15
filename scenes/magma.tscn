@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dw02ciywljtga"]
+
+[ext_resource type="Texture2D" uid="uid://bhv0ors7xg4hm" path="res://assets/sprites/magma.png" id="1_88ox0"]
+[ext_resource type="Script" uid="uid://du46rdk1nl4ic" path="res://scenes/magma.gd" id="1_g1gu6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g1gu6"]
+size = Vector2(8, 8)
+
+[node name="Magma" type="Area2D" unique_id=1077295582]
+script = ExtResource("1_g1gu6")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1019592679]
+texture = ExtResource("1_88ox0")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=750174552]
+shape = SubResource("RectangleShape2D_g1gu6")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

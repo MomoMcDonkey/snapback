@@ -1,0 +1,136 @@
+[gd_scene format=3 uid="uid://ciqjvvyx87pnv"]
+
+[ext_resource type="Script" uid="uid://dyx8nv21ui0pw" path="res://scripts/home.gd" id="1_script"]
+[ext_resource type="Texture2D" uid="uid://djogvp52eo8bv" path="res://assets/sprites/backound.png" id="2_background"]
+[ext_resource type="FontFile" uid="uid://cc67kj4taimy3" path="res://Minecraft-Bold.otf" id="4_font"]
+[ext_resource type="Texture2D" uid="uid://d3rb0u1fjpn8g" path="res://assets/sprites/title.png" id="4_reixx"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_disabled"]
+bg_color = Color(0.620, 0.278, 0.180, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_focus"]
+draw_center = false
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(1, 0.741, 0.361, 1)
+expand_margin_left = -2.0
+expand_margin_top = -2.0
+expand_margin_right = -2.0
+expand_margin_bottom = -2.0
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_hover"]
+bg_color = Color(0.898, 0.435, 0.176, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_play"]
+bg_color = Color(0.788, 0.298, 0.161, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+shadow_color = Color(0, 0, 0, 0)
+shadow_size = 0
+shadow_offset = Vector2(0, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBox_pressed"]
+bg_color = Color(0.612, 0.196, 0.141, 1)
+border_width_left = 1
+border_width_top = 1
+border_width_right = 1
+border_width_bottom = 1
+border_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_menu"]
+default_font = ExtResource("4_font")
+default_font_size = 8
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(1, 1, 1, 1)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(1, 1, 1, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 1, 1, 1)
+Button/constants/outline_size = 0
+Button/styles/disabled = SubResource("StyleBox_disabled")
+Button/styles/focus = SubResource("StyleBox_focus")
+Button/styles/hover = SubResource("StyleBox_hover")
+Button/styles/normal = SubResource("StyleBox_play")
+Button/styles/pressed = SubResource("StyleBox_pressed")
+
+[node name="Home" type="Control" unique_id=1557487113]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_menu")
+script = ExtResource("1_script")
+
+[node name="Background" type="TextureRect" parent="." unique_id=374198137]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+texture = ExtResource("2_background")
+expand_mode = 1
+stretch_mode = 6
+
+[node name="CenterContainer" type="CenterContainer" parent="." unique_id=1592368725]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="MenuLayout" type="Control" parent="CenterContainer" unique_id=140229174]
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+mouse_filter = 2
+
+[node name="TitleSprite" type="Sprite2D" parent="CenterContainer/MenuLayout" unique_id=392746098]
+position = Vector2(64, 24)
+texture = ExtResource("4_reixx")
+
+[node name="Buttons" type="VBoxContainer" parent="CenterContainer/MenuLayout" unique_id=774853796]
+layout_mode = 0
+offset_left = 29.0
+offset_top = 54.0
+offset_right = 99.0
+offset_bottom = 93.0
+theme_override_constants/separation = 5
+
+[node name="PlayButton" type="Button" parent="CenterContainer/MenuLayout/Buttons" unique_id=1202438436]
+custom_minimum_size = Vector2(70, 18)
+layout_mode = 2
+mouse_default_cursor_shape = 2
+text = "PLAY"
+
+[node name="CostumeButton" type="Button" parent="CenterContainer/MenuLayout/Buttons" unique_id=1611388502]
+custom_minimum_size = Vector2(70, 16)
+layout_mode = 2
+text = "COSTUME"
+
+[connection signal="pressed" from="CenterContainer/MenuLayout/Buttons/PlayButton" to="." method="_on_play_button_pressed"]

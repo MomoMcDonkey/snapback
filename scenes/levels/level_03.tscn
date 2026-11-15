@@ -1,0 +1,26 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="1_coin"]
+[ext_resource type="PackedScene" path="res://scenes/magma.tscn" id="2_lava"]
+
+[node name="Level3" type="Node2D"]
+metadata/level_name = "Double Back"
+metadata/solution_pull = Vector2(-23, 22)
+
+[node name="Coin1" parent="." instance=ExtResource("1_coin")]
+position = Vector2(95, 65)
+
+[node name="Coin2" parent="." instance=ExtResource("1_coin")]
+position = Vector2(85, 10)
+
+[node name="Coin3" parent="." instance=ExtResource("1_coin")]
+position = Vector2(28, 63)
+
+[node name="Lava1" parent="." instance=ExtResource("2_lava")]
+position = Vector2(68, 52)
+
+[node name="Lava2" parent="." instance=ExtResource("2_lava")]
+position = Vector2(36, 20)
+
+[node name="Lava3" parent="." instance=ExtResource("2_lava")]
+position = Vector2(100, 100)

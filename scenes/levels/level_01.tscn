@@ -1,0 +1,16 @@
+[gd_scene format=3]
+
+[ext_resource type="PackedScene" path="res://scenes/coin.tscn" id="1_coin"]
+
+[node name="Level1" type="Node2D"]
+metadata/level_name = "First Flight"
+metadata/solution_pull = Vector2(0, 16)
+
+[node name="Coin1" parent="." instance=ExtResource("1_coin")]
+position = Vector2(64, 78)
+
+[node name="Coin2" parent="." instance=ExtResource("1_coin")]
+position = Vector2(64, 54)
+
+[node name="Coin3" parent="." instance=ExtResource("1_coin")]
+position = Vector2(64, 29)

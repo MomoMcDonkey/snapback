@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://02bt8xeyvh0e"]
+
+[ext_resource type="Script" uid="uid://buno2ko2flhog" path="res://scripts/boomerang.gd" id="1_q1dmq"]
+[ext_resource type="Texture2D" uid="uid://bqvrbtvenkblq" path="res://assets/sprites/boomerang.png" id="1_xwptw"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q1dmq"]
+size = Vector2(14, 8)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q1dmq"]
+radius = 20.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wall"]
+radius = 8.0
+
+[node name="Boomerang" type="CharacterBody2D" unique_id=1744513680]
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+script = ExtResource("1_q1dmq")
+
+[node name="WallCollision" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wall")
+
+[node name="PlayerArea" type="Area2D" parent="." unique_id=60758967]
+
+[node name="Sprite2D" type="Sprite2D" parent="PlayerArea" unique_id=563797900]
+texture = ExtResource("1_xwptw")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerArea" unique_id=1543486533]
+shape = SubResource("RectangleShape2D_q1dmq")
+
+[node name="ClickArea" type="Area2D" parent="." unique_id=915627699]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ClickArea" unique_id=1964280152]
+shape = SubResource("CircleShape2D_q1dmq")
+
+[connection signal="input_event" from="ClickArea" to="." method="_on_click_area_input_event"]

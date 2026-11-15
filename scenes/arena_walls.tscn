@@ -1,0 +1,27 @@
+[gd_scene format=3 uid="uid://cq787iife40qt"]
+
+[sub_resource type="RectangleShape2D" id="Shape_vertical"]
+size = Vector2(8, 141.5)
+
+[sub_resource type="RectangleShape2D" id="Shape_horizontal"]
+size = Vector2(126, 8)
+
+[node name="ArenaWalls" type="StaticBody2D" unique_id=1105062864]
+collision_layer = 2
+collision_mask = 2
+
+[node name="Left" type="CollisionShape2D" parent="." unique_id=1582630418]
+position = Vector2(-3, 64)
+shape = SubResource("Shape_vertical")
+
+[node name="Right" type="CollisionShape2D" parent="." unique_id=795770286]
+position = Vector2(131, 63.75)
+shape = SubResource("Shape_vertical")
+
+[node name="Top" type="CollisionShape2D" parent="." unique_id=1653335935]
+position = Vector2(64, -3)
+shape = SubResource("Shape_horizontal")
+
+[node name="Bottom" type="CollisionShape2D" parent="." unique_id=458882531]
+position = Vector2(64, 131)
+shape = SubResource("Shape_horizontal")

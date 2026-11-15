@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="Script" path="res://scripts/stone_block.gd" id="1_script"]
+[ext_resource type="Texture2D" path="res://assets/sprites/stone.png" id="2_stone"]
+
+[sub_resource type="RectangleShape2D" id="Shape_block"]
+size = Vector2(16, 20)
+
+[node name="StoneBlock" type="StaticBody2D" groups=["bank_blocks"]]
+collision_layer = 2
+collision_mask = 2
+input_pickable = false
+script = ExtResource("1_script")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("Shape_block")
+
+[node name="Artwork" type="NinePatchRect" parent="."]
+texture_filter = 1
+offset_left = -8.0
+offset_top = -10.0
+offset_right = 8.0
+offset_bottom = 10.0
+mouse_filter = 2
+texture = ExtResource("2_stone")
+region_rect = Rect2(3, 3, 10, 10)
+patch_margin_left = 1
+patch_margin_top = 1
+patch_margin_right = 1
+patch_margin_bottom = 1
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 1
