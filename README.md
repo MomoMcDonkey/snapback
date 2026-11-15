@@ -1,2 +1,26 @@
-This game is about throwing a boomerang to try and collect all the coins.
-But watch out for the magma and stone.
+
+<br>
+
+<div align = center>
+
+[![Badge License]][License]   
+[![Badge Likes]][#]
+
+<br>
+<br>
+    
+# Buttons
+         
+**Links  ➞  Buttons**
+
+<br>
+<br>
+
+[<kbd> <br> KeyBinding Button <br> </kbd>][KBD]
+
+[![Button Shield]][Shield]
+
+</div>
+
+<br>
+<br>
