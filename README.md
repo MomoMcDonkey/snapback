@@ -2,7 +2,7 @@
 
 # Snapback
 
-[![Play the demo](https://img.shields.io/badge/PLAY_THE_DEMO-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://YOUR_USERNAME.itch.io/snapback)
+[![Play the demo](https://img.shields.io/badge/PLAY_THE_DEMO-FA5C5C?style=for-the-badge&logo=itchdotio&logoColor=white)](https://momomcdonkey.itch.io/snapback)
 
 ## Gameplay
 
